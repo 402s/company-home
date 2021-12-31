@@ -1,0 +1,90 @@
+---
+import BrandLogo from "./../components/BrandLogo.tsx";
+import InfoBox from "../components/home/InfoBox.astro";
+
+type Member = {
+	name: string,
+	title: string,
+	twitter?: string,
+	github?: string
+}
+
+const members: Member[] = [
+	{
+		name: "Shaun Regenbaum",
+		title: "CEO",
+		github: "https://github.com/Shaun-Regenbaum",
+		twitter: "https://twitter.com/RegenbaumShaun"
+	},
+	{
+		name: "Caleb Taylor",
+		title: "Front-End",
+		github: "https://github.com/aquaductape"
+	},
+	{
+		name: "Daniel Shapiro",
+		title: "People"
+	},
+	{
+		name: "Dan Jutan",
+		title: "Product",
+		github: "https://github.com/Jutanium",
+		twitter: "https://twitter.com/jutanium"
+	},
+]
+---
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>402</title>
+
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+	<link rel="stylesheet" href={Astro.resolve('../styles/fonts.css')}>
+	
+</head>
+<body>
+		<header>
+			<div class="h-12 mt-6 mb-8 md:mb-24">
+				<BrandLogo/>
+			</div>
+		</header>
+	<main>
+		<div class="w-full flex flex-wrap gap-x-16 flex-col xl:h-screen items-center justify-start content-center space-y-12">
+			<InfoBox title="What?" bgWood={[3,1]}>
+				402 makes tools for a better internet, starting with content creators. We are fixing the mistakes of the past by enabling creators to control their content, own their audience, and make money along the way. We envision a world where users have a voice on the platforms they use and pay fair market prices for the content they consume.
+			</InfoBox>
+			<InfoBox title="Who?" bgWood={[1,2]}>
+				<div class="flex flex-col gap-3 w-full">
+					{members.map(member => <div class="flex flex-row w-full gap-2 not-prose">
+						<span class="font-semibold text-lg w-56">{member.name} - {member.title}</span>
+						{member.twitter && <a href={member.twitter}><img src="/assets/icons/twitter.svg" width="24" height="24"></a>}
+						{member.github && <a href={member.github}><img src="/assets/icons/github.svg" width="24" height="24"></a>}
+					</div>)}
+				</div>
+			</InfoBox>
+
+			<InfoBox title="What?" bgWood={[3,1]}>
+			Our first product, a content monetization tool, is launching Q1 of 2022. Our second product, a community-building tool, is launching Q2 of 2022. We are also raising our second round of funding in Q1 2022. For press resources, fundraising inquiries or interview requests, please contact <a href="mailto:resources@402.email">resources@402.email</a>.
+			</InfoBox>
+
+			<InfoBox title="Why?" bgWood={[2,3]}>
+				<p>
+				The internet used to carry with it the dreams of a perfectly free and open society. A world where information was trustworthy and interoperability was a standard. These dreams were challenged from the very first days of the public internet in the 1990s. AOL, Microsoft, and countless others saw the new opportunity and massively accelerated adoption. Yet, the dream struggled to keep up. Every innovation brought unintended consequences, some of them good, many of them bad. Even the trailblazers, like Netscape, were not immune to a world that was growing too fast. 
+				</p>
+				<p>
+				Sometime during the 2000s, we started forgetting our dreams. As the biggest platforms shut down their APIs and locked their users within closed gardens, many lost hope. Advertisements were meant to ensure free access to information; instead they fueled invasions of our privacy. Subscriptions were meant to ensure high quality content, instead they led to a zero-sum game where local journalism and anyone but the top 1% dies. 
+				</p>
+				<p>
+					None of this was inevitable, and it can all still be fixed. We start by empowering the people who bring value to the internet: creators.
+				</p>
+			</InfoBox>
+
+			<InfoBox title="Web 3.0?" bgWood={[1,1]}>
+				402 is not a web 3.0 company. The reason is because we are still working on learning what went wrong with web 2.0. We fundamentally believe that technology doesn’t solve human problems, people do. With that in mind, our goal is to be the bridge between web 2.0 and web 3.0. We are doing the hard work of convincing the majority of web-users that the internet can be better. We are doing this not through hype and Twitter posts, but by building tools that shows real users why the internet can be better. Our goal is get everyone into web 3.0 by making it absurdly clear how much better it really is. We don’t need to talk about the future because we are building it. 
+			</InfoBox>
+		</div>
+	</main>
+</body>
+</html>

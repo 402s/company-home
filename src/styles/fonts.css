@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Oskari G2';
+  font-style: normal;
+  font-weight: 400;
+   src: url('../../public/fonts/OskariG2-Book.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oskari G2';
+  font-style: normal;
+  font-weight: 600;
+   src: url('../../public/fonts/OskariG2-SemiBold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Oskari G2';
+  font-style: normal;
+  font-weight: 700;
+   src: url('../../public/fonts/OskariG2-Bold.woff2') format('woff2');
+  font-display: swap;
+}

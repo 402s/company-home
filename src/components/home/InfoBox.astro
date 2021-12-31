@@ -1,0 +1,44 @@
+---
+export interface Props {
+  title: string,
+  bgWood?: [woodTypes, woodTypes]
+}
+
+import WoodImg from './WoodImg.astro';
+
+type woodTypes = 1 | 2 | 3;
+
+// type Wood = {
+//   type: number,
+//   rotation: number,
+// }
+
+const { title, bgWood = []} = Astro.props;
+
+const leftWood = bgWood[0];
+const rightWood = bgWood[1];
+---
+<style>
+  .title-bar {
+    background-image: url("assets/boxheader.svg");
+    background-repeat: repeat-x;
+    background-size: 200px;
+  }
+</style>
+
+<div class="flex flex-row flex-wrap w-96 md:w-full max-w-lg">
+  <div>
+    {leftWood && <WoodImg side="left" type={leftWood}></WoodImg>}
+  </div>
+  <div class="shadow-xl rounded-xl w-full">
+    <div class="title-bar text-2xl font-bold bg-yellow-400 rounded-t-xl w-full h-10 pt-2 px-4">
+      {title}
+    </div>
+    <div class="p-4 min-h-[12rem] prose rounded-b-xl text-lg bg-white">
+      <slot/>
+    </div>
+  </div>
+  <div>
+    {rightWood && <WoodImg side="right" type={rightWood}></WoodImg>}
+  </div>
+</div>
