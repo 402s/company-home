@@ -51,13 +51,13 @@ const members: Member[] = [
 			</div>
 		</header>
 	<main>
-		<div class="w-full flex flex-nowrap gap-x-16 flex-col xl:h-screen items-center justify-start content-center space-y-12">
+		<div class="w-full flex flex-wrap gap-x-16 flex-col xl:h-screen items-center justify-start content-center">
 			<InfoBox title="What?" bgWood={[3,1]}>
 				402 makes tools for a better internet, starting with content creators. We are fixing the mistakes of the past by enabling creators to control their content, own their audience, and make money along the way. We envision a world where users have a voice on the platforms they use and pay fair market prices for the content they consume.
 			</InfoBox>
 			<InfoBox title="Who?" bgWood={[1,2]}>
 				<div class="flex flex-col gap-3 w-full">
-					{members.map(member => <div class="flex flex-row w-full gap-2 not-prose">
+					{members.map(member => <div class="flex self-stretch flex-row w-full gap-2 not-prose">
 						<span class="font-semibold text-lg w-56">{member.name} - {member.title}</span>
 						{member.twitter && <a href={member.twitter}><img src="/assets/icons/twitter.svg" width="24" height="24"></a>}
 						{member.github && <a href={member.github}><img src="/assets/icons/github.svg" width="24" height="24"></a>}
