@@ -7,6 +7,11 @@ module.exports = {
   theme: {
     fontFamily: {
       'sans': ['Oskari G2', 'ui-sans-serif', 'system-ui'],
+    },
+    extend: {
+      colors: {
+        'off-white' : '#EFF4F5'
+      }
     }
   },
   plugins: [
