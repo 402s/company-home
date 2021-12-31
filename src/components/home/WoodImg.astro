@@ -6,18 +6,13 @@ export interface Props {
 
 const { type, side } = Astro.props;
 
-const classes = ["absolute", "-z-10"];
-if (side === "left") {
-  classes.push("-ml-14");
-} else {
-  classes.push("-ml-12");
-}
+const classes = [
+  "absolute", "-z-10", 
+  "drop-shadow-md",
+  side === "left" ? "-ml-14" : "-ml-12",
+  type === 2 ? "w-36" : "w-24"
+];
 
-if (type === 2) {
-  classes.push("w-36");
-} else {
-  classes.push("w-24");
-}
 
 let rotation = -15 + Math.random() * 30;
 if (side == "right") {
