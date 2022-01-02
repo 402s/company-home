@@ -26,15 +26,15 @@ const rightWood = bgWood[1];
   }
 </style>
 
-<div class="flex flex-row flex-wrap w-96 md:w-full max-w-lg mb-12">
+<div class="flex flex-row flex-wrap w-60 max-w-lg xsm:w-80 sm:w-96 md:w-2/5 mb-12">
   <div>
     {leftWood && <WoodImg side="left" type={leftWood}></WoodImg>}
   </div>
   <div class="shadow-xl rounded-xl w-full">
-    <div class="title-bar text-2xl font-bold bg-yellow-400 rounded-t-xl w-full h-10 pt-2 px-4">
+    <div class="title-bar text-2xl text-deep-purple font-bold bg-yellow-400 rounded-t-xl w-full h-10 pt-2 px-4">
       {title}
     </div>
-    <div class="p-4 min-h-[12rem] prose rounded-b-xl text-lg bg-white">
+    <div class="text-deep-purple p-4 px-8 min-h-[12rem] prose rounded-b-xl text-lg bg-white">
       <slot/>
     </div>
   </div>
