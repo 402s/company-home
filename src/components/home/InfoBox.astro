@@ -22,23 +22,23 @@ const rightWood = bgWood[1];
   .title-bar {
     background-image: url("./boxheader.svg");
     background-repeat: repeat-x;
-    background-size: 200px;
+    background-size: 300px;
   }
 </style>
 
-<div class="flex flex-row flex-wrap w-full max-w-lg xsm:w-80 sm:w-96 md:w-2/5 mb-12">
-  <div>
+<div class="flex flex-row flex-wrap place-items-center place-content-center w-full min-w-[314px] sm:min-w-[470px] xsm:w-3/5 mb-12">
+  <div class="hidden xsm:inline">
     {leftWood && <WoodImg side="left" type={leftWood}></WoodImg>}
   </div>
-  <div class="shadow-xl rounded-xl w-full">
+  <div class="shadow-xl rounded-xl w-full max-w-[800px]">
     <div class="title-bar text-2xl text-deep-purple font-bold bg-yellow-400 rounded-t-xl w-full h-10 pt-2 px-4">
       {title}
     </div>
-    <div class="text-deep-purple p-4 px-8 min-h-[12rem] prose rounded-b-xl text-lg bg-white">
+    <div class="text-deep-purple max-w-[800px] p-10 px-8 min-h-[12rem] prose rounded-b-xl text-lg bg-white">
       <slot/>
     </div>
   </div>
-  <div>
+  <div class="hidden xsm:inline">
     {rightWood && <WoodImg side="right" type={rightWood}></WoodImg>}
   </div>
 </div>
